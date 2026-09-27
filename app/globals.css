@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f8fafc; color: #172033; font-family: Arial, Helvetica, sans-serif; }
+button, input, select { font: inherit; }
+
+@layer components {
+  .container-shell { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .field { @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-100; }
+  .primary-button { @apply inline-flex items-center justify-center rounded-xl bg-teal-700 px-5 py-3 font-semibold text-white transition hover:bg-teal-800 active:scale-[.98]; }
+}
