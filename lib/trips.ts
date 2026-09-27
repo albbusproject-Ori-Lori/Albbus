@@ -7,7 +7,7 @@ export type SearchTrip = Trip & {
   operator: { name: string } | null;
 };
 
-const tripSelect = "*, departure_location:locations!departure_location_id(city_name, station_name), arrival_location:locations!arrival_location_id(city_name, station_name), operator:operators(name)";
+const tripSelect = "*, departure_location:locations!departure_location_id!inner(city_name, station_name), arrival_location:locations!arrival_location_id!inner(city_name, station_name), operator:operators(name)";
 
 export async function getTrip(tripId: string) {
   const supabase = createSupabaseServerClient();
